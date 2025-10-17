@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Site</title>
+</head>
+<body>
+  <h1>Hello from My Demo Website!</h1>
+  <button id="btn">Get Message from Backend</button>
+  <p id="msg"></p>
+  <script>
+    document.getElementById("btn").onclick = async () => {
+      const res = await fetch("https://your-backend.vercel.app/hello");
+      document.getElementById("msg").innerText = await res.text();
+    };
+  </script>
+</body>
+</html>
